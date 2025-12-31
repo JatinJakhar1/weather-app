@@ -1,19 +1,20 @@
-const apikey = "YOUR_API_KEY";
+const apikey = "cec11b955e98f7ccbf3a2024575c8804";
 const apiurl =
   "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 async function checkweather(city) {
   const response = await fetch(apiurl + city + `&appid=${apikey}`);
+  const data = await response.json();
 
-  if (response.status === 404) {
+  // ❌ Any API error (invalid city, wrong key, etc.)
+  if (data.cod !== 200) {
     document.querySelector(".invalidcity").style.display = "flex";
     document.querySelector("#items").style.display = "none";
     document.querySelector("#city").style.display = "none";
     return;
   }
 
-  const data = await response.json();
-
+  // ✅ Valid data
   document.querySelector(".invalidcity").style.display = "none";
   document.querySelector("#items").style.display = "block";
   document.querySelector("#city").style.display = "flex";
@@ -39,6 +40,7 @@ async function checkweather(city) {
   else if (condition === "Snow") weatherimg.src = "snow.png";
 }
 
+// Search button
 const searchbtn = document.querySelector("#searchbar button");
 const searchbox = document.querySelector("#searchbar input");
 
