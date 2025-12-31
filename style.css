@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: rgb(31, 30, 30);
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  height: 550px;
+  width: 350px;
+  background-color: rgb(43, 74, 85);
+  border: 2px solid white;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  border-radius: 15px;
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, #000000 40%, transparent 100%);
+}
+
+#searchbar {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#searchbar input {
+  width: 250px;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 20px 0 0 20px;
+}
+
+#searchbar button {
+  width: 50px;
+  font-size: 22px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background-color: gray;
+  cursor: pointer;
+}
+
+#searchbar button:hover {
+  background-color: white;
+  color: black;
+}
+
+.invalidcity {
+  display: none;
+  justify-content: center;
+  color: rgb(253, 58, 58);
+  margin-top: 5px;
+}
+
+#city {
+  display: none;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+}
+
+#items {
+  display: none;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  height: 150px;
+  width: 150px;
+}
+
+.temptature {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+}
+
+.felllike {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+}
+
+#info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+#info img {
+  height: 40px;
+  width: 40px;
+}
+
+#info p {
+  font-size: 20px;
+  color: white;
+}
+
+.wind,
+.humidity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.element {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  #container {
+    width: 90%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
